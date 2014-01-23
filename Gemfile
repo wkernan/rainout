@@ -9,6 +9,9 @@ group :development, :test do
 	gem 'sqlite3'
 end
 
+# Twitter Bootstrap with Sass
+gem 'bootstrap-sass', '~> 3.0.3.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

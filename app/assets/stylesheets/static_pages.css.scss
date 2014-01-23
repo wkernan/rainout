@@ -1,0 +1,89 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+body {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.navbar-brand {
+	padding: 0;
+}
+
+.navbar-default {
+	background-color: white;
+	border-color: white;
+}
+
+.navbar .divider-vertical {
+	height: 26px;
+    margin: 13px 2px;
+    border-right: 1px solid black;
+}
+
+.navbar li {
+	font-size: 20px;
+}
+
+.center {
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Nunito', sans-serif;
+	font-size: 56px;
+	margin-bottom: 35px;
+}
+
+.btn-lg {
+	padding: 72px 16px;
+	box-shadow: 5px 5px 3px #000000;
+}
+
+.btn {
+	font-family: 'Nunito', sans-serif;
+}
+
+.soften {
+    height: 2px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.9), rgba(0,0,0,0));
+    border-top-color: initial;
+    border-top-style: initial;
+    border-top-width: 0px;
+    border-right-color: initial;
+    border-right-style: initial;
+    border-right-width: 0px;
+    border-bottom-color: initial;
+    border-bottom-style: initial;
+    border-bottom-width: 0px;
+    border-left-color: initial;
+    border-left-style: initial;
+    border-left-width: 0px;
+}
+
+footer {
+	ul {
+		text-align: center;
+	}
+	li {
+		display: inline;
+	}
+	.divider {
+		margin: 0 8px 0 4px;
+		height: 13px;
+    	border-right: 1px solid black;
+	}
+}

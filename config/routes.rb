@@ -1,4 +1,10 @@
 Rainout::Application.routes.draw do
+
+  root :to => 'static_pages#home'
+  get 'company', to: 'static_pages#company'
+  get 'blog', to: 'static_pages#blog'
+  get 'contact_us', to: 'static_pages#contact_us'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

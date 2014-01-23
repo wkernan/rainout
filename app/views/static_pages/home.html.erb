@@ -1,0 +1,40 @@
+<nav class="navbar navbar-default" role="navigation">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="icon-bar"></span>
+       	 	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+    	</button>
+    	<a class="navbar-brand" href="/"><img style="margin-right: 10px;" src="assets/circle.png" alt="..." class="img-rounded">Rainouthotline.com</a>
+    </div>
+
+    <div class="navbar-collapse collapse">
+    	<ul class="nav navbar-nav navbar-right">
+    		<li><%= link_to "Home", root_path %></li>
+    		<li class="divider-vertical"></li>
+    		<li><%= link_to "Company", company_path %></li> 
+    		<li class="divider-vertical"></li>
+    		<li><%= link_to "Blog", blog_path %></li>
+    		<li class="divider-vertical"></li> 
+    		<li><%= link_to "Contact Us", contact_us_path %></li>
+    	</ul>
+    </div>
+</nav>
+<hr class="soften">
+
+<h1 class="center"><b>Reliable & Easy Rainout Lines</b></h1>
+<div style="max-width: 400px; margin: 0 auto 72px;">
+	<button type="button" class="btn btn-primary btn-lg btn-block">Get My Rainout Line</button>
+</div>
+<hr class="soften">
+<footer class="center">
+	<ul>
+		<li><%= link_to "Home", root_path %></li>
+		<li class="divider"></li>
+		<li><%= link_to "Company", company_path %></li>
+		<li class="divider"></li> 
+		<li><%= link_to "Blog", blog_path %></li>
+		<li class="divider"></li>
+		<li><%= link_to "Contact Us", contact_us_path %></li>
+	</ul>
+</footer>
