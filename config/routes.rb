@@ -1,5 +1,6 @@
 Rainout::Application.routes.draw do
 
+  devise_for :users
   root :to => 'static_pages#home'
   get 'company', to: 'static_pages#company'
   get 'blog', to: 'static_pages#blog'
