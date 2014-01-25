@@ -8,8 +8,20 @@ body {
 	padding-bottom: 20px;
 }
 
+.form-control {
+	width: 40%;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
 hr {
 	margin-top: 0px;
+}
+
+.small-container {
+	margin-left: 50px;
 }
 
 .container {
@@ -25,6 +37,10 @@ hr {
 
 .navbar-brand {
 	padding: 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #428bca;
 }
 
 .navbar-default {

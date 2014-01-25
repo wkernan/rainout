@@ -1,22 +1,16 @@
-<h2>Sign up</h2>
+<h2 style="margin-bottom: 35px;">Step 2: A bit about yourself...</h2>
+<div style="margin-left: 150px;">
+  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+      <%= f.input :email, :placeholder => 'Email address', :autofocus => true %>
+      <%= f.input :password, :placeholder => 'Password' %>
+      <%= f.input :password_confirmation, :placeholder => 'Password confirmation' %>
+      <%= f.input :phone_number, :placeholder => '( ___ ) ___ - ____' %>
+      <div class="center" style="margin-top: 30px; margin-right: 150px; margin-bottom: 80px;">
+        <%= f.submit "Keep Going", class: "btn btn-primary" %>
+      </div>
+  <% end %>
+</div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.label :phone_number %><br />
-  <%= f.text_field :phone_number %></div>
-  <p>Enter phone number to be automatically recognized when you call your hotline.</p>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
