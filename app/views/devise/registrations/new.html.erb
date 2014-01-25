@@ -1,13 +1,14 @@
 <h2 style="margin-bottom: 35px;">Step 2: A bit about yourself...</h2>
 <div class="small-container">
   <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+    <%= f.error_notification %>
 
       <%= f.input :email, :placeholder => 'Email address', :autofocus => true %>
       <%= f.input :password, :placeholder => 'Password' %>
       <%= f.input :password_confirmation, :placeholder => 'Password confirmation' %>
+      <p>Enter a phone number to be recognized by hotline when you call.</p>
       <%= f.input :phone_number, :placeholder => '( ___ ) ___ - ____' %>
-      <div class="center" style="margin-top: 30px; margin-right: 10px; margin-bottom: 80px;">
+      <div class="center" style="margin-top: 30px; margin-right: 50px; margin-bottom: 80px;">
         <%= f.submit "Keep Going", class: "btn btn-primary" %>
       </div>
   <% end %>

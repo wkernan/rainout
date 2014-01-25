@@ -19,7 +19,7 @@
     		<li><%= link_to "Contact Us", contact_us_path %></li>
             <% if current_user %>
                 <li class="divider-vertical"></li>
-                <li style="padding: 11px 0px 11px 15px; color: #3276b1; line-height: 26px;"><%= current_user.email %></li>
+                <li style="padding: 11px 0px 11px 15px; color: #333333; line-height: 26px;"><%= current_user.email %></li>
                 <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <% end %>
     	</ul>
