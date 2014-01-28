@@ -6,8 +6,8 @@
       <%= f.input :email, :placeholder => 'Email address', :autofocus => true %>
       <%= f.input :password, :placeholder => 'Password' %>
       <%= f.input :password_confirmation, :placeholder => 'Password confirmation' %>
-      <p>Enter a phone number to be recognized by hotline when you call.</p>
-      <%= f.input :phone_number, :placeholder => 'No special characters please' %>
+      <p>Enter a phone number with area code to be recognized by hotline when you call.</p>
+      <%= f.input :phone_number, :placeholder => 'Area code first. No special characters please' %>
       <div class="center" style="margin-top: 30px; margin-right: 50px; margin-bottom: 80px;">
         <%= f.submit "Keep Going", class: "btn btn-primary" %>
       </div>
