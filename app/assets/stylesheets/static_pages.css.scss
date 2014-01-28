@@ -3,8 +3,41 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 
-h1, h2, h3, h4, h5, h6, p, a, li, label {
+h1, h2, h3, h4, h5, h6, p, a, li, label, td, th, option {
 	font-family: 'Oswald', sans-serif;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #D5A6BD;
+}
+
+.btn-success {
+	background-color: #009E0F;
+}
+
+.btn-success:hover {
+	background-color: #018F0E;
+}
+
+.override {
+	border-color: white !important;
+}
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+	border-top: none;
+}
+.table > thead > tr > th {
+	border-bottom: none;
+}
+
+.btn-edit {
+	box-shadow: 4px 4px 0px #000000;
+	padding: 6px 15px;
+}
+
+.btn-fac {
+	box-shadow: 4px 4px 0px #000000;
+	padding: 24px 15px;
 }
 
 body {

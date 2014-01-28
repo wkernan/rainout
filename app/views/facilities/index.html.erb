@@ -1,0 +1,68 @@
+<h1>Facilities</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Abbr.</th>
+      <th>Status</th>
+      <th>Message</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @facilities.each do |facility| %>
+      <tr>
+        <td><%= facility.name %></td>
+        <td><%= facility.abbr %></td>
+        <td><%= facility.status %></td>
+        <td><%= truncate(facility.message, :length => 60, :seperator => ' ') %></td>
+        <td><%= link_to '<button class="btn btn-primary btn-edit">Edit</button>'.html_safe, edit_facility_path(facility) %></td>
+        <td><%= link_to '<button class="btn btn-danger btn-edit">Destroy</button>'.html_safe, facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="center" style="margin-top: 30px; margin-bottom: 80px;">
+  <!-- Future Modal Button -->
+  <%= link_to '<button class="center btn btn-success btn-fac" data-toggle="modal" data-target="#myModal">Add New Facility</button>'.html_safe, new_facility_path %>
+  <!--<%= link_to '<button class="center btn btn-success btn-fac">Add New Facility</button>'.html_safe, new_facility_path %> -->
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add New Facility</h4>
+      </div>
+      <div class="modal-body">
+        <div class="small-container">
+          <%= simple_form_for(@facility) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <%= f.input :name %>
+              <%= f.input :abbr %>
+              <%= f.input :status, collection: ["Open", "Close", "Custom"], selected: ["Open"] %>
+              <%= f.input :message %>
+            </div>
+
+            <div class="form-actions">
+              <%= f.button :submit %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
