@@ -10,4 +10,12 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
   	devise_parameter_sanitizer.for(:sign_up) << :phone_number
   end
+
+  def stored_location_for(resource)
+  	nil 
+  end
+
+  def after_sign_in_path_for(resource)
+  	facilities_path
+  end
 end
