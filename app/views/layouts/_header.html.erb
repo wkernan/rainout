@@ -10,11 +10,15 @@
 
     <div class="navbar-collapse collapse">
     	<ul class="nav navbar-nav navbar-right">
-    		<li><%= link_to "Home", root_path %></li>
+            <% if current_user %>
+    		  <li><%= link_to "Facilities", facilities_path %></li>
+            <% else %>
+                <li><%= link_to "Home", root_path %></li>
+            <% end %>
     		<li class="divider-vertical"></li>
     		<li><%= link_to "Company", company_path %></li> 
     		<li class="divider-vertical"></li>
-    		<li><%= link_to "Blog", blog_path %></li>
+    		<li><%= link_to "Blog", 'http://blog.rainouthotline.com' %></li>
     		<li class="divider-vertical"></li> 
     		<li><%= link_to "Contact Us", contact_us_path %></li>
             <% if current_user %>
