@@ -177,3 +177,18 @@ footer {
 	margin-right: 0px;
 }
 
+@media (max-width: 480px) {
+	h1 {
+		font-size: 40px;
+	}
+	th {
+		font-size: 15px;
+	}
+	td {
+		font-size: 12px;
+	}
+	.btn {
+		font-size: 12px;
+	}
+}
+
