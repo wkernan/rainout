@@ -38,6 +38,14 @@ h1, h2, h3, h4, h5, h6, p, a, li, label, td, th, option {
 	background-color: #018F0E;
 }
 
+.btn-edit:hover {
+	box-shadow: none;
+}
+
+.btn-lg:hover {
+	box-shadow: none;
+}
+
 .override {
 	border-color: white !important;
 }
@@ -132,7 +140,7 @@ h1 {
 }
 
 .btn-lg {
-	padding: 72px 16px;
+	padding: 60px 16px;
 	box-shadow: 5px 5px 3px #000000;
 }
 
