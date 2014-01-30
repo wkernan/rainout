@@ -172,6 +172,10 @@ footer {
 	}
 }
 
+.col-md-10 {
+	border-left: 2px solid black;
+}
+
 .row {
 	margin-left: 0px;
 	margin-right: 0px;
@@ -191,8 +195,13 @@ footer {
 		font-size: 12px;
 	}
 	.container {
-		padding-right: 0px;
-		padding-left: 0px;
+		padding-right: 5px;
+		padding-left: 5px;
 	}
 }
 
+@media (max-width: 991px) {
+	.col-md-10 {
+		border-left: none;
+	}
+}
