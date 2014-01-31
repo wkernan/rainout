@@ -35,6 +35,7 @@ h1, h2, h3, h4, h5, h6, p, a, li, label, td, th, option {
 }
 
 .btn-success:hover {
+	box-shadow: none;
 	background-color: #018F0E;
 }
 
@@ -212,4 +213,20 @@ footer {
 	.col-md-10 {
 		border-left: none;
 	}
+}
+
+.form-horizontal .control-label {
+	text-align: left;
+}
+
+#facility_status {
+	width: 20%;
+}
+
+.form-control {
+	width: 60%;
+}
+
+textarea.vert {
+	resize: 100px;
 }
