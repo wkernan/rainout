@@ -27,6 +27,8 @@ class FacilitiesController < ApplicationController
   # POST /facilities
   # POST /facilities.json
   def create
+    @facility = current_user.facilities.new(facility_params)
+
     respond_to do |format|
       if @facility.save
         format.html { redirect_to facilities_path, notice: 'Facility was successfully created.' }
