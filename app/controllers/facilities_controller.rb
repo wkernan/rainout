@@ -5,7 +5,7 @@ class FacilitiesController < ApplicationController
   # GET /facilities.json
   def index
     @facility = Facility.new 
-    @facilities = current_user.facilities.all
+    @facilities = current_user.facilities.order('created_at DESC')
   end
 
   # GET /facilities/1
