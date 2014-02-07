@@ -1,5 +1,15 @@
-<h1>Editing facility</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', facilities_path %>
+<div id="modal-edit-fields">
+	<div class="modal-dialog">
+		<div class="modal-content">
+	  		<div class="modal-header">
+	    		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	    		<h4 class="modal-title" id="myModalLabel">Update Facility</h4>
+	  		</div>
+	  		<div class="modal-body">
+	    		<div class="small-container">
+	      			<%= render 'form' %>
+	  	  		</div>
+	 	 	</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div>

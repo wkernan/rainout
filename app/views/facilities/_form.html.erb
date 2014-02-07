@@ -5,10 +5,10 @@
     <%= f.input :name %>
     <%= f.input :abbr %>
     <%= f.input :status, collection: ["Open", "Close", "Custom"] %>
-    <%= f.input :message %>
+    <%= f.input :message, :input_html => { :rows => 8 } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-actions" style="text-align: center;">
+    <%= f.button :submit, :class => "center btn btn-success btn-edit", :style => "margin: auto;" %>
   </div>
 <% end %>
