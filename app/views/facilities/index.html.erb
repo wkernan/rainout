@@ -46,13 +46,6 @@
       <%= link_to '<button class="center btn btn-success btn-fac" data-toggle="modal" data-target="#myModal1">Add New Facility</button>'.html_safe, new_facility_path %>
     </div>
 
-    <div id="editModal" class="modalDialog">
-      <div>
-        <a href="#modalclose" title="Close" class="modalclose">X</a>
-        <%= render 'form' %>
-      </div>
-    </div>
-
     <!-- Create Modal -->
     <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
