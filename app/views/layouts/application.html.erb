@@ -9,12 +9,14 @@
   <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<div class="container">
+	<div id="wrap">
 		<%= render 'layouts/header' %>
-	 	<%= render 'layouts/messages' %>
-		<%= yield %>
-		<%= render 'layouts/footer' %>
+		<div class="container">
+		 	<%= render 'layouts/messages' %>
+			<%= yield %>
+		</div>
 	</div>
+	<%= render 'layouts/footer' %>
 	<script src="assets/modal.js"></script>
 </body>
 </html>

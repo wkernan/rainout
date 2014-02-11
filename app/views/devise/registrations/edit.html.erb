@@ -1,36 +1,56 @@
-<%= link_to "Back", :back %>
-<div id="modal-edit-fields">
-  <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel">Edit Profile</h4>
-        </div>
-        <div class="modal-body">
-          <div class="small-container">
-            <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-              <%= devise_error_messages! %>
+<div class="row">
+  <div class="col-md-2">
+    <div class="well">
+      <ul class="nav bs-navbar">
+        <li class="center sidenav-link">
+          <%= link_to "My Account", edit_user_registration_path, { :class => "active" } %>
+        </li>
+        <li class="center sidenav-link">
+          <%= link_to "Facilities", facilities_path %>
+        </li>
+        <li class="center sidenav-link">
+          <%= link_to "Notifications", '#' %>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-                <%= f.input :email, :placeholder => 'Email address', :autofocus => true %>
-
-                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-                  <% end %>
-
-                <%= f.input :password, :autocomplete => "off", :placeholder => "Leave blank if you don't want to change it" %> 
-
-
-                <%= f.input :password_confirmation, :placeholder => "Password confirmation" %>
-
-                <%= f.input :current_password, :placeholder => "Current password" %> 
-
-              <div class="center" style="margin-top: 30px; margin-right: 50px; margin-bottom: 80px;">
-                <%= f.submit "Update", class: "btn btn-primary" %>
-              </div>
-            <% end %>
+<div class="col-md-10">
+  <div id="modal-edit-fields">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Edit Profile</h4>
           </div>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div>
-<%= button_to "Cancel my account", registration_path(resource_name), class: "btn btn-primary", :data => { :confirm => "Are you sure?" }, :method => :delete %>
+          <div class="modal-body">
+            <div class="small-container">
+              <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+                <%= devise_error_messages! %>
 
+                  <%= f.input :email, :placeholder => 'Email address', :autofocus => true %>
+
+                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                    <% end %>
+
+                  <%= f.input :password, :autocomplete => "off", :placeholder => "Leave blank if you don't want to change it" %> 
+
+
+                  <%= f.input :password_confirmation, :placeholder => "Password confirmation" %>
+
+                  <%= f.input :current_password, :placeholder => "Current password" %> 
+
+                <div class="center" style="margin-top: 30px; margin-right: 50px; margin-bottom: 80px;">
+                  <%= f.submit "Update", class: "btn btn-primary" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <%= button_to "Cancel my account", registration_path(resource_name), class: "btn btn-primary", :data => { :confirm => "Are you sure?" }, :method => :delete %>
+  </div>
+</div>
+</div>

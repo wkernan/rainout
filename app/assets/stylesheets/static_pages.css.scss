@@ -3,12 +3,39 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 
-h1, h2, h3, h4, h5, h6, p, a, li, label, td, th, option {
+h1, h2, h3, h4, h5, h6, p, a, li, label, td, th, option, span {
 	font-family: 'Oswald', sans-serif;
 }
 
+html {
+	height: 100%;
+	overflow-y: scroll;
+}
+
+body {
+	height: 100%;
+}
+
+.glyphicon {
+	margin-right: 10px;
+	font-size: 20px;
+
+}
+
+.table {
+	margin-bottom: 0px;
+}
+
+tr:last-child td:first-child {
+	border-bottom-left-radius: 4px;
+}
+
+tr:last-child td:last-child {
+	border-bottom-right-radius: 4px;
+}
+
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-   background-color: #D5A6BD;
+   background-color: #BABABA;
 }
 
 .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1 {
@@ -16,18 +43,35 @@ h1, h2, h3, h4, h5, h6, p, a, li, label, td, th, option {
 	padding-right: 0px;
 }
 
+.active {
+	background-color: #428bca;
+}
+
 .sidenav-link {
-	border: 2px solid black;
-	box-shadow: 3px 3px 0px black;
-	margin: 3px;
+
 }
 
 .bs-navbar li a:hover {
-	background-color: #3276B1;
+	background-color: #428bca;
 }
 
 .bs-navbar li a {
 	color: black;
+	border-bottom: 1px solid #292D38;
+	font-size: 18px;
+}
+
+.bs-navbar > li:first-child a {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.bs-navbar > li:last-child a {
+	border-bottom: none;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
 }
 
 .btn-success {
@@ -51,6 +95,19 @@ h1, h2, h3, h4, h5, h6, p, a, li, label, td, th, option {
 	border-color: white !important;
 }
 
+.btn-primary:hover {
+	box-shadow: none;
+}
+
+.well { 
+	margin-bottom: 10px;
+	padding: 0px;
+	background-color: #E3E3E3;
+	border: 1px solid #333333;
+	-webkit-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,0.4), 0px 1px 2px 0px rgba(255, 255, 255, 0.2);
+	box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,0.4), 0px 1px 2px 0px rgba(255, 255, 255, 0.2);
+}
+
 .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
 	border-top: none;
 }
@@ -59,19 +116,13 @@ h1, h2, h3, h4, h5, h6, p, a, li, label, td, th, option {
 }
 
 .btn-edit {
-	box-shadow: 4px 4px 0px #000000;
+	box-shadow: 2px 2px 0px #000000;
 	padding: 6px 15px;
 }
 
 .btn-fac {
-	box-shadow: 4px 4px 0px #000000;
+	box-shadow: 2px 2px 0px #000000;
 	padding: 24px 15px;
-}
-
-body {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	min-width: 400px;
 }
 
 abbr[title] {
@@ -104,8 +155,27 @@ hr {
 	margin-left: auto;
 }
 
+#wrap > .container {
+	padding-top: 85px;
+}
+
+#nav-container {
+	padding-left: 31px;
+	padding-right: 0px;
+}
+
 .navbar {
-	margin-bottom: 0px;
+	margin-bottom: 40px;
+	border-radius: 0px;
+	padding: 10px 0;
+}
+
+.navbar-toggle {
+	background-color: #428BCA;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background-color: #428BCA;
 }
 
 .navbar-brand {
@@ -117,14 +187,19 @@ hr {
 }
 
 .navbar-default {
-	background-color: white;
-	border-color: white;
+	background-color: transparent;
+	border-color: black;
+	border-width: 0 0 1px;
+	-webkit-box-shadow: 0px 1px 1px black;
+	-moz-box-shadow: 0px 1px 1px black;
+	box-shadow: 0px 1px 1px black;
 }
 
 .navbar .divider-vertical {
-	height: 26px;
-    margin: 13px 2px;
-    border-right: 1px solid black;
+	height: 46px;
+    margin: 2px;
+    border-right: 1px solid gray;
+    border-left: 1px solid black;
 }
 
 .navbar li {
@@ -143,7 +218,7 @@ h1 {
 
 .btn-lg {
 	padding: 60px 16px;
-	box-shadow: 5px 5px 3px #000000;
+	box-shadow: 2px 2px 0px #000000;
 }
 
 .btn {
@@ -167,7 +242,20 @@ h1 {
     border-left-width: 0px;
 }
 
+#wrap {
+	min-height: 100%;
+	height: auto;
+	margin: 0 auto -100px;
+	padding: 0 0 100px;
+}
+
+#push {
+	height: 100px;
+}
+
 footer {
+	height: 99px;
+	border-top: 1px solid black;
 	ul {
 		text-align: center;
 		-webkit-padding-start: 0;
@@ -183,7 +271,7 @@ footer {
 }
 
 .col-md-10 {
-	border-left: 2px solid black;
+	padding-left: 30px;
 }
 
 .row {
@@ -205,14 +293,26 @@ footer {
 		font-size: 12px;
 	}
 	.container {
-		padding-right: 5px;
-		padding-left: 5px;
+		padding-right: 3px;
+		padding-left: 3px;
+	}
+	.col-md-10 {
+		padding-left: 0px;
+	}
+	.table > tbody > tr > td {
+		padding: 3px;
+	}
+	.table > thead > tr > th {
+		padding: 5px;
 	}
 }
 
 @media (max-width: 991px) {
 	.col-md-10 {
 		border-left: none;
+	}
+	.col-md-10 {
+		padding-left: 0px;
 	}
 }
 
