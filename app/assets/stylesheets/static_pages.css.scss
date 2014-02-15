@@ -193,6 +193,13 @@ hr {
 	-webkit-box-shadow: 0px 1px 1px black;
 	-moz-box-shadow: 0px 1px 1px black;
 	box-shadow: 0px 1px 1px black;
+	.navbar-brand {
+		color: white;
+		padding-top: 6px;
+	}
+	.navbar-brand:hover {
+		color: black;
+	}
 }
 
 .navbar .divider-vertical {
@@ -340,4 +347,16 @@ textarea.vert {
 	border-radius: 6px;
 	background-clip: padding-box;
 	outline: none;
+}
+
+
+.modal-content {
+	background-color: #e3e3e3;
+}
+
+.divider-horizontal {
+	width: 100%;
+	margin: 20px 0px 20px -25px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid white;
 }

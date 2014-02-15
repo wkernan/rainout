@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+          <h2 class="modal-title" id="myModalLabel">Sign Up</h2>
         </div>
         <div class="modal-body">
           <div class="small-container">
@@ -12,10 +12,11 @@
               <%= f.input :email, :placeholder => 'Email address', :autofocus => true %>
               <%= f.input :password, :placeholder => 'Password' %>
               <%= f.input :password_confirmation, :placeholder => 'Password confirmation' %>
-              <hr class="soften">
+              <div class="divider-horizontal">
+              </div>
                 <p>Enter a phone number with area code to be recognized by hotline when you call.</p>
               <%= f.input :phone_number, :placeholder => 'Area code first. No special characters please' %>
-              <div class="center" style="margin-top: 30px; margin-right: 50px; margin-bottom: 80px;">
+              <div class="center" style="margin-top: 30px; margin-right: 50px;">
                 <%= f.submit "Keep Going", class: "btn btn-primary" %>
               </div>
             <% end %>
