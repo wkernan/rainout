@@ -1,19 +1,5 @@
 <div class="row">
-  <div class="col-md-2">
-    <div class="well">
-      <ul class="nav bs-navbar">
-        <li class="sidenav-link">
-          <%= link_to '<span class="glyphicon glyphicon-list"></span>Facilities'.html_safe, facilities_path, { :class => "active" } %>
-        </li>
-        <li class="sidenav-link">
-          <%= link_to '<span class="glyphicon glyphicon-bell"></span>Notifications'.html_safe, '#' %>
-        </li>
-        <li class="sidenav-link">
-          <%= link_to '<span class="glyphicon glyphicon-tasks"></span>Account'.html_safe, edit_user_registration_path %>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <%= render 'sidebar' %>
   <div class="col-md-10">
     <h1 style="padding-left: 30px;">My Facilities</h1>
   <div class="well">
@@ -24,8 +10,8 @@
           <th>Abbr.</th>
           <th>Status</th>
           <th>Message</th>
-          <th style="width: 80px;"></th>
-          <th style="width: 100px;"></th>
+          <th style="width: 50px;"></th>
+          <th style="width: 75px;"></th>
         </tr>
       </thead>
 

@@ -117,7 +117,7 @@ tr:last-child td:last-child {
 
 .btn-edit {
 	box-shadow: 2px 2px 0px #000000;
-	padding: 6px 15px;
+	padding: 6px 10px;
 }
 
 .btn-fac {
@@ -332,3 +332,12 @@ textarea.vert {
 	resize: 100px;
 }
 
+
+.form-content {
+	postition: relative;
+	background-color: #e3e3e3;
+	border: 1px solid black;
+	border-radius: 6px;
+	background-clip: padding-box;
+	outline: none;
+}
