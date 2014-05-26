@@ -21,7 +21,7 @@
             <td><%= facility.name %></td>
             <td><a href="tel:+1<%= facility.hotline %>"><%= facility.hotline %></td>
             <td><%= facility.status %></td>
-            <td><%= truncate(facility.message, :length => 50, :seperator => ' ') %></td>
+            <td><%= facility.message %></td>
             <td><a data-toggle="modal" data-target="#myModal2" data-remote="<%= edit_facility_path(facility) %> #modal-edit-fields" class="btn btn-primary btn-edit">edit</a></td>
             <td><%= link_to '<button class="btn btn-danger btn-edit">Destroy</button>'.html_safe, facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>

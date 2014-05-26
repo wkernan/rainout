@@ -1,5 +1,19 @@
-<h1>New number</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', numbers_path %>
+<div id="modal-edit-fields">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="myModalLabel">Find a hotline number</h2>
+        </div>
+        <div class="modal-body">
+          <div class="small-container">
+            <form method="POST">
+              <label>Choose by area code (e.g. 512): </label><input type="text" size="7" name="area_code"/><br/><br/>
+              <div class="center" style="margin-top: 30px; margin-right: 50px;">
+                <input type="submit" class="btn btn-primary" value="SEARCH"/>
+              </div>
+            </form>
+          </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
