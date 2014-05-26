@@ -1,12 +1,17 @@
 Rainout::Application.routes.draw do
 
   resources :facilities
+  resources :charges
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
   root :to => 'static_pages#home'
   get 'company', to: 'static_pages#company'
   get 'blog', to: 'static_pages#blog'
   get 'contact_us', to: 'static_pages#contact_us'
+  get 'search_numbers', to: 'static_pages#search_numbers'
+  post 'search_numbers', to: 'static_pages#numbers'
+  post 'saved_number', to: 'static_pages#saved_number'
+  post 'charges/new', to: 'charges#new'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

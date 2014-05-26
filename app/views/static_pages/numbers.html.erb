@@ -1,0 +1,31 @@
+<% 
+  account_sid = 'ACfb6ad995a6df4e72ed305a5084a5c399'
+  auth_token = '0d4d4203a00a79dbcf81d355bacdc3df'
+   
+  client = Twilio::REST::Client.new(account_sid, auth_token)
+ 
+  search_params = {}
+  %w[area_code].each do |p|
+    search_params[p] = params[p] unless params[p].nil? || params[p].empty?
+  end
+%>
+
+
+  <% begin %>
+    <% local_numbers = client.account.available_phone_numbers.get('US').local %>
+    <% numbers = local_numbers.list(search_params) %>
+   
+    <% unless numbers.empty? %>
+      <h3>Choose a number</h3>
+      <% numbers.each do |number| %>
+        <form  action='/charges/new'>
+        <label><%= number.friendly_name %></label>
+        <input type='hidden' name='PhoneNumber' value='<%= number.friendly_name %>' />
+        <input type='submit' value='BUY' /></form>
+      <% end %>
+    <% else %>
+      <h3 class="center"><b>Sorry!</b> Twilio doesn't have any numbers available that match those constraints.</h3>
+    <% end %>
+  <% rescue StandardError => e %>
+    <h3 class="center"><b>Sorry! </b><%= e.message %></h3>
+  <% end %>
