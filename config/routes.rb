@@ -1,5 +1,7 @@
 Rainout::Application.routes.draw do
 
+  resources :numbers
+
   resources :facilities
 
   devise_for :users

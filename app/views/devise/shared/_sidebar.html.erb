@@ -2,7 +2,7 @@
   <div class="well">
     <ul class="nav bs-navbar">
       <li class="sidenav-link">
-        <%= link_to '<span class="glyphicon glyphicon-list"></span>Facilities'.html_safe, facilities_path %>
+        <%= link_to '<span class="glyphicon glyphicon-list"></span>Facilities'.html_safe, facilities_path%>
       </li>
       <li class="sidenav-link">
         <%= link_to '<span class="glyphicon glyphicon-bell"></span>Notifications'.html_safe, '#' %>
@@ -10,6 +10,8 @@
       <li class="sidenav-link">
         <%= link_to '<span class="glyphicon glyphicon-tasks"></span>Account'.html_safe, edit_user_registration_path, { :class => "active" } %>
       </li>
+      <li class="sidenav-link">
+        <%= link_to '<span class="glyphicon glyphicon-phone"></span>Hotline Numbers'.html_safe, numbers_path %>
     </ul>
   </div>
 </div>

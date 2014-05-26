@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
    validates :password_confirmation, presence: true
 
    has_many :facilities
+   has_many :numbers
 end

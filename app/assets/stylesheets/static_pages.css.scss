@@ -26,6 +26,10 @@ body {
 	margin-bottom: 0px;
 }
 
+.table > tbody > tr > td {
+	vertical-align: middle;
+}
+
 tr:last-child td:first-child {
 	border-bottom-left-radius: 4px;
 }
@@ -172,6 +176,7 @@ hr {
 
 .navbar-toggle {
 	background-color: #428BCA;
+	margin-right: 30px;
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
@@ -299,6 +304,9 @@ footer {
 	.btn {
 		font-size: 12px;
 	}
+	.btn-edit {
+		padding: 4px 7px;
+	}
 	.container {
 		padding-right: 3px;
 		padding-left: 3px;
@@ -307,10 +315,10 @@ footer {
 		padding-left: 0px;
 	}
 	.table > tbody > tr > td {
-		padding: 3px;
+		padding: 3px 0 3px 3px;
 	}
 	.table > thead > tr > th {
-		padding: 5px;
+		padding: 5px 0 5px 5px;
 	}
 }
 
@@ -328,7 +336,7 @@ footer {
 }
 
 #facility_status {
-	width: 100px;
+	width: 135px;
 }
 
 .form-control {

@@ -3,8 +3,8 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :abbr %>
-    <%= f.input :status, collection: ["Open", "Close", "Custom"] %>
+    <%= f.input :hotline, collection: @numbers, :prompt => "Select Hotline" %>
+    <%= f.input :status, prompt: "Select Status", collection: ["Open", "Close", "Custom"] %>
     <%= f.input :message, :input_html => { :rows => 8 } %>
     <p>* required input</p>
   </div>

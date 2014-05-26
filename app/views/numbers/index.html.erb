@@ -1,0 +1,30 @@
+<div class="row">
+  <%= render 'sidebar' %>
+  <div class="col-md-10">
+    <h1 style="padding-left: 30px;">Hotline Numbers</h1>
+    <div class="well">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th style="width: 75px;"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @numbers.each do |number| %>
+            <tr>
+              <td><%= number.number %></td>
+              <td><%= link_to '<button class="btn btn-danger btn-edit">Remove</button>'.html_safe, number, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <div class="center" style="margin-bottom: 50px;">
+      <%= link_to '<button class="center btn btn-primary btn-fac">Add Hotline Number</button>'.html_safe, new_number_path %>
+    </div>
+  </div>
+</div>
+

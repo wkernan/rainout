@@ -6,6 +6,7 @@ class FacilitiesController < ApplicationController
   def index
     @facility = Facility.new 
     @facilities = current_user.facilities.order('created_at DESC')
+    @numbers = Number.all.map { |number| [ number.number, number.number ] }
   end
 
   # GET /facilities/1
@@ -17,11 +18,13 @@ class FacilitiesController < ApplicationController
   # GET /facilities/new
   def new
     @facility = Facility.new
+    @numbers = Number.all.map { |number| [ number.number, number.number ] }
   end
 
   # GET /facilities/1/edit
   def edit
     @facility = current_user.facilities.find(params[:id]) rescue redirect_to(facilities_path)
+    @numbers = Number.all.map { |number| [ number.number, number.number ] }
   end
 
   # POST /facilities
@@ -72,6 +75,6 @@ class FacilitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def facility_params
-      params.require(:facility).permit(:name, :abbr, :status, :message)
+      params.require(:facility).permit(:name, :hotline, :status, :message)
     end
 end

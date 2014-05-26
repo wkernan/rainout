@@ -1,17 +1,17 @@
 <div class="row">
   <%= render 'sidebar' %>
   <div class="col-md-10">
-    <h1 style="padding-left: 30px;">My Facilities</h1>
+    <h1 class="center">My Facilities</h1>
   <div class="well">
     <table class="table table-striped">
       <thead>
         <tr>
           <th>Name</th>
-          <th>Abbr.</th>
+          <th>Hotline</th>
           <th>Status</th>
           <th>Message</th>
           <th style="width: 50px;"></th>
-          <th style="width: 75px;"></th>
+          <th style="width: 70px;"></th>
         </tr>
       </thead>
 
@@ -19,7 +19,7 @@
         <% @facilities.each do |facility| %>
           <tr>
             <td><%= facility.name %></td>
-            <td><%= facility.abbr %></td>
+            <td><a href="tel:+1<%= facility.hotline %>"><%= facility.hotline %></td>
             <td><%= facility.status %></td>
             <td><%= truncate(facility.message, :length => 50, :seperator => ' ') %></td>
             <td><a data-toggle="modal" data-target="#myModal2" data-remote="<%= edit_facility_path(facility) %> #modal-edit-fields" class="btn btn-primary btn-edit">edit</a></td>
