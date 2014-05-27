@@ -4,4 +4,5 @@ class Facility < ActiveRecord::Base
 
 	validates :name, presence: true
 	validates :status, presence: true
+	validates :hotline, presence: true
 end

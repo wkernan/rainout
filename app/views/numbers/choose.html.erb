@@ -1,0 +1,23 @@
+<% 
+  account_sid = 'ACfb6ad995a6df4e72ed305a5084a5c399'
+  auth_token = '0d4d4203a00a79dbcf81d355bacdc3df'
+   
+  client = Twilio::REST::Client.new(account_sid, auth_token)
+ 
+  search_params = {}
+  %w[area_code].each do |p|
+    search_params[p] = params[p] unless params[p].nil? || params[p].empty?
+  end
+%>
+
+<%= simple_form_for(@number, :url => new_charge_path) %>
+<%= f.error_notification %>
+<% local_numbers = client.account.available_phone_numbers.get('US').local %>
+<% numbers = local_numbers.list(search_params) %>
+<h3>Choose a hotline</h3>
+<div class="form-inputs">
+  <%= f.input :number, collection: 'number.friendly_name', as: :radio %>
+</div>
+<div class="form-actions">
+  <%= f.button :submit %>
+</div>

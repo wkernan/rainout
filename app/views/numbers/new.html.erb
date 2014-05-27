@@ -1,19 +1,47 @@
+<% 
+  account_sid = 'ACfb6ad995a6df4e72ed305a5084a5c399'
+  auth_token = '0d4d4203a00a79dbcf81d355bacdc3df'
+   
+  client = Twilio::REST::Client.new(account_sid, auth_token)
+ 
+  search_params = {}
+  %w[area_code].each do |p|
+    search_params[p] = params[p] unless params[p].nil? || params[p].empty?
+  end
+%>
 <div id="modal-edit-fields">
-  <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title" id="myModalLabel">Find a hotline number</h2>
-        </div>
-        <div class="modal-body">
-          <div class="small-container">
-            <form method="POST">
-              <label>Choose by area code (e.g. 512): </label><input type="text" size="7" name="area_code"/><br/><br/>
-              <div class="center" style="margin-top: 30px; margin-right: 50px;">
-                <input type="submit" class="btn btn-primary" value="SEARCH"/>
-              </div>
-            </form>
-          </div>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
+	<div class="modal-dialog">
+    	<div class="modal-content">
+        	<div class="modal-header">
+          	<h2 class="modal-title center" id="myModalLabel">Copy a hotline you'd like to use and paste it into the field</h2>
+        	</div>
+        	<div class="modal-body">
+          		<div class="small-container" id="number">
+					<% begin %>
+						<% local_numbers = client.account.available_phone_numbers.get('US').local %>
+						<% numbers = local_numbers.list(search_params) %>
+
+						<% unless numbers.empty? %>
+							<%= simple_form_for(@number) do |f| %>
+								<%= f.error_notification %>
+								<% numbers.each do |number| %>
+									<label style="padding: 5px"><%= number.friendly_name %></label>
+								<% end %>
+								<div class="form-inputs" style="margin-top: 5px;">
+								  <%= f.input :number %>
+								</div>
+								<div class="form-actions" style="text-align: center; padding-right: 40px;">
+								  <%= f.button :submit, :class => "center btn btn-success btn-edit", :style => "margin: auto;" %>
+								</div>
+							<% end %>
+						<% else %>
+							<h3 class="center"><b>Sorry!</b> Twilio doesn't have any numbers available that match those constraints.</h3>
+					    <% end %>
+					<% rescue StandardError => e %>
+						<h3 class="center"><b>Sorry! </b><%= e.message %></h3>
+					<% end %>
+				</div>
+      		</div>
+   		 </div><!-- /.modal-content -->
+  	</div><!-- /.modal-dialog -->
 </div>

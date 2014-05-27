@@ -1,5 +1,6 @@
 class NumbersController < ApplicationController
   before_action :set_number, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /numbers
   # GET /numbers.json
@@ -10,6 +11,10 @@ class NumbersController < ApplicationController
   # GET /numbers/1
   # GET /numbers/1.json
   def show
+  end
+
+  def find
+    @number = Number.new
   end
 
   # GET /numbers/new
@@ -28,7 +33,7 @@ class NumbersController < ApplicationController
 
     respond_to do |format|
       if @number.save
-        format.html { redirect_to @number, notice: 'Number was successfully created.' }
+        format.html { redirect_to new_charge_path, notice: 'Please pay with your card.' }
         format.json { render action: 'show', status: :created, location: @number }
       else
         format.html { render action: 'new' }
