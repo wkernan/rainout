@@ -33,7 +33,7 @@ class NumbersController < ApplicationController
 
     respond_to do |format|
       if @number.save
-        format.html { redirect_to new_charge_path, notice: 'Please pay with your card.' }
+        format.html { redirect_to new_charge_path, notice: 'Almost done, please pay with your card.' }
         format.json { render action: 'show', status: :created, location: @number }
       else
         format.html { render action: 'new' }
