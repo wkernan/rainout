@@ -32,7 +32,10 @@
 								</div>
 								<%= render 'layouts/phone' %>
 								<div class="form-actions" style="text-align: center; padding-right: 40px;">
-								  <%= f.button :submit, :class => "center btn btn-success btn-edit", :style => "margin: auto;" %>
+									<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          								data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+         								data-description="A month's subscription"
+          								data-amount="500"></script>
 								</div>
 							<% end %>
 						<% else %>

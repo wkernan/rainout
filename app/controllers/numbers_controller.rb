@@ -34,8 +34,8 @@ class NumbersController < ApplicationController
     @number = current_user.numbers.new(number_params)
 
     respond_to do |format|
-      if @number.save
-        format.html { redirect_to new_charge_path, notice: 'Almost done, please pay with your card.' }
+      if @number.save_with_payment
+        format.html { redirect_to new_facility_path, notice: 'Thank you for your purchase. Now set up your first facility using your new hotline.' }
         format.json { render action: 'show', status: :created, location: @number }
       else
         format.html { render action: 'new' }
