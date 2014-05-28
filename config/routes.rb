@@ -6,7 +6,7 @@ Rainout::Application.routes.draw do
 
   resources :charges
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
   root :to => 'static_pages#home'
   get 'company', to: 'static_pages#company'
   get 'blog', to: 'static_pages#blog'

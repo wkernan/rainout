@@ -7,7 +7,7 @@ class ChargesController < ApplicationController
 	  @amount = 500
 
 	  customer = Stripe::Customer.create(
-	    :email => 'example@stripe.com',
+	    :email => current_user.email,
 	    :card  => params[:stripeToken]
 	  )
 
@@ -17,7 +17,8 @@ class ChargesController < ApplicationController
 	    :description => 'Rails Stripe customer',
 	    :currency    => 'usd'
 	  )
-
+      
+      redirect_to new_facility_path, notice: 'Thank you for the payment. Now setup your facility.'
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
 	  redirect_to charges_path

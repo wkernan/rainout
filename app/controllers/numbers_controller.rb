@@ -5,12 +5,13 @@ class NumbersController < ApplicationController
   # GET /numbers
   # GET /numbers.json
   def index
-    @numbers = Number.all
+    @numbers = current_user.numbers.order('created_at DESC')
   end
 
   # GET /numbers/1
   # GET /numbers/1.json
   def show
+    @numbers = current_user.numbers.find(params[:id]) rescue redirect_to(numbers_path)
   end
 
   def find
@@ -24,12 +25,13 @@ class NumbersController < ApplicationController
 
   # GET /numbers/1/edit
   def edit
+    redirect_to numbers_path
   end
 
   # POST /numbers
   # POST /numbers.json
   def create
-    @number = Number.new(number_params)
+    @number = current_user.numbers.new(number_params)
 
     respond_to do |format|
       if @number.save

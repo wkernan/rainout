@@ -15,7 +15,9 @@
               <div class="divider-horizontal">
               </div>
                 <p>Enter a phone number with area code to be recognized by hotline when you call.</p>
-              <%= f.input :phone_number, :placeholder => 'Area code first. No special characters please' %>
+                <p class="center" style="padding-right: 48px;">ex. (123) 456-7890
+              <%= f.input :phone_number, input_html: { id: 'phone' } %>
+              <%= render 'layouts/phone' %>
               <div class="center" style="margin-top: 30px; margin-right: 50px;">
                 <%= f.submit "Keep Going", class: "btn btn-primary" %>
               </div>

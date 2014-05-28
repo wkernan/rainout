@@ -6,7 +6,7 @@ class FacilitiesController < ApplicationController
   def index
     @facility = Facility.new 
     @facilities = current_user.facilities.order('created_at DESC')
-    @numbers = Number.all.map { |number| [ number.number, number.number ] }
+    @numbers =current_user.numbers.map { |number| [ number.number, number.number ] }
   end
 
   # GET /facilities/1
@@ -18,13 +18,13 @@ class FacilitiesController < ApplicationController
   # GET /facilities/new
   def new
     @facility = Facility.new
-    @numbers = Number.all.map { |number| [ number.number, number.number ] }
+    @numbers = current_user.numbers.map { |number| [ number.number, number.number ] }
   end
 
   # GET /facilities/1/edit
   def edit
     @facility = current_user.facilities.find(params[:id]) rescue redirect_to(facilities_path)
-    @numbers = Number.all.map { |number| [ number.number, number.number ] }
+    @numbers = current_user.numbers.map { |number| [ number.number, number.number ] }
   end
 
   # POST /facilities

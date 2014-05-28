@@ -28,8 +28,9 @@
 									<label style="padding: 5px"><%= number.friendly_name %></label>
 								<% end %>
 								<div class="form-inputs" style="margin-top: 5px;">
-								  <%= f.input :number %>
+								  <%= f.input :number, input_html: { id: 'phone' } %>
 								</div>
+								<%= render 'layouts/phone' %>
 								<div class="form-actions" style="text-align: center; padding-right: 40px;">
 								  <%= f.button :submit, :class => "center btn btn-success btn-edit", :style => "margin: auto;" %>
 								</div>
